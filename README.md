@@ -1,5 +1,7 @@
 # LSDB
-A tiny wrapper for localStorage that lets use LocalStorage as cache data base
+A tiny wrapper for localStorage that lets use LocalStorage as cache data base.
+Done using [promises].
+Inspired by [astorage]
 
 ## Usage
 
@@ -41,3 +43,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
+[promises]: https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[astorage]: https://github.com/andrew--r/astorage
