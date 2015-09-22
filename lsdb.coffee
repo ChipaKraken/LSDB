@@ -6,10 +6,10 @@ class LSDB
     $.ajax url:url
     .done (data)->
       localStorage.setItem(that, data)
-      new Promise (a,b)-> a(data)
+      Promise.resolve(data)
   getAll: ->
     temp = JSON.parse(localStorage.getItem(@name))
-    new Promise (a,b)-> a(temp)
+    Promise.resolve(temp)
   append: (data)->
     temp = @getAll()
     temp.push(data)
@@ -18,7 +18,7 @@ class LSDB
     temp = @getAll()
     i = temp.pop()
     localStorage.setItem(@name, JSON.stringify(temp))
-    new Promise (a,b)-> a(i)
+    Promise.resolve(i)
   remove: (kv)->
     temp = @getAll()
     key = Object.keys kv
