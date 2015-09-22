@@ -26,14 +26,14 @@ LSDB = (function() {
 
   LSDB.prototype.append = function(data) {
     var temp;
-    temp = this.getAll();
+    temp = JSON.parse(localStorage.getItem(this.name));
     temp.push(data);
     return localStorage.setItem(this.name, JSON.stringify(temp));
   };
 
   LSDB.prototype.pop = function() {
     var i, temp;
-    temp = this.getAll();
+    temp = JSON.parse(localStorage.getItem(this.name));
     i = temp.pop();
     localStorage.setItem(this.name, JSON.stringify(temp));
     return Promise.resolve(i);
@@ -41,7 +41,7 @@ LSDB = (function() {
 
   LSDB.prototype.remove = function(kv) {
     var key, temp;
-    temp = this.getAll();
+    temp = JSON.parse(localStorage.getItem(this.name));
     key = Object.keys(kv);
     key = key[0];
     temp = temp.filter(function(data) {

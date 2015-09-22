@@ -11,16 +11,16 @@ class LSDB
     temp = JSON.parse(localStorage.getItem(@name))
     Promise.resolve(temp)
   append: (data)->
-    temp = @getAll()
+    temp = JSON.parse(localStorage.getItem(@name))
     temp.push(data)
     localStorage.setItem(@name, JSON.stringify(temp))
   pop: ->
-    temp = @getAll()
+    temp = JSON.parse(localStorage.getItem(@name))
     i = temp.pop()
     localStorage.setItem(@name, JSON.stringify(temp))
     Promise.resolve(i)
   remove: (kv)->
-    temp = @getAll()
+    temp = JSON.parse(localStorage.getItem(@name))
     key = Object.keys kv
     key = key[0]
     temp = temp.filter (data)->
