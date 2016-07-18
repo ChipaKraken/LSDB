@@ -4,7 +4,7 @@ var LSDB;
 LSDB = (function() {
   function LSDB(name) {
     this.name = name;
-    localStorage.setItem(this.name, JSON.stringify([]));
+    localStorage.setItem(this.name, JSON.stringify((JSON.parse(localStorage.getItem(this.name))) || []));
   }
 
   LSDB.prototype.sync = function(url) {
