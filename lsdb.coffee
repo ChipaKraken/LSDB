@@ -1,6 +1,6 @@
 class LSDB
   constructor: (@name) ->
-    localStorage.setItem(@name, JSON.stringify([]))
+    localStorage.setItem(@name, JSON.stringify((JSON.parse(localStorage.getItem(@name))) or []))
   sync: (url)->
     that = @name
     $.ajax url:url
